@@ -2,7 +2,10 @@
 using namespace std;
 // Djiskarta's Algo
 // Using Pq
-vector<int> dijkstra(int V, vector<vector<int>> adj[], int S) {
+typedef pair<int,int> pi;
+typedef vector<int> vi;
+typedef vector<vector<int>> vvi;
+vi dijkstra(int V, vvi adj[], int S) {
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
     vector<int>dist(V,1e9);
     dist[S] = 0; 
