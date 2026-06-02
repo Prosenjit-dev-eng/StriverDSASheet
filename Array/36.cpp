@@ -4,8 +4,7 @@ using namespace std;
 // Function to calculate nCr (n choose r)
 int binomialCoeff(int n, int r) {
     int res = 1;
-    if (r > n - r) 
-        r = n - r;
+    if (r > n - r) r = n - r;
     for (int i = 0; i < r; ++i) {
         res *= (n - i);
         res /= (i + 1);
@@ -22,7 +21,7 @@ void printPascalTriangle(int n) {
         for (int i = 0; i <= line; i++) {
             cout << binomialCoeff(line, i) << "   ";
         }
-        cout << endl;
+        cout << endl; 
     }
 }
 
