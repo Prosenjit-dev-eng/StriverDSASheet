@@ -15,7 +15,7 @@ int majorityElements(vector<int>& arr, int n){
     }
     return -1;*/
 
-    // Optimal =>  Moore’s Voting Algorithm
+    // Optimal =>  Moore’s Voting Algorithm,to keep maximum frequent element
     int cnt = 0, el;
     for (int i = 0; i < n; i++)
     {
