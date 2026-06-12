@@ -43,7 +43,7 @@ Node* merge(Node*h1, Node*h2){
        
 }
 Node* flattenList(Node* root){
-        Node* h1,*h2,*h3;
+    Node* h1,*h2,*h3;
     while (root->next)
     {
         h1 = root;
@@ -58,6 +58,44 @@ Node* flattenList(Node* root){
     return root;
 
 }
+/*
+class Node {
+public:
+    int data;
+    Node* next;
+    Node* bottom;
+
+    Node(int x) {
+        data = x;
+        next = nullptr;
+        bottom = nullptr;
+    }
+}; */
+// Recursivly
+class Solution {
+  public:
+    Node* merge(Node *h1,Node *h2){
+        if(!h1) return h2;
+        if(!h2) return h1;
+        
+        Node*res;
+        if(h1->data < h2->data){
+            res = h1;
+            res->bottom = merge(res->bottom, h2);
+        }
+        else{
+            res = h2;
+            res->bottom = merge(res->bottom, h1);
+        }
+        return res;
+    }
+    Node *flatten(Node *root) {
+        if(!root) return NULL;
+        Node* h2 = flatten(root->next);
+        return merge(root,h2);
+        
+    }
+};
 void display(Node* head){
     Node* temp = head;
     while (temp)

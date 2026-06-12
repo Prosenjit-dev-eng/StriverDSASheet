@@ -59,7 +59,7 @@ Node* findMiddleNodeOfLLOptimized(Node* head) {
         }
         Node* slow = head;
         Node* fast = head;
-        while (fast != NULL && fast->next != NULL) {
+        while (fast != NULL/*Even*/ && fast->next != NULL/*Odd*/) {
             fast = fast->next->next; // Move fast pointer by 2 steps
             slow = slow->next; // Move slow pointer by 1 step
         }

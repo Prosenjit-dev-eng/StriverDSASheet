@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int t;
@@ -9,8 +8,8 @@ int main()
     {
         int n;
         cin>>n;
-        cout<<n-1<<endl;
+        if(n%3 == 0) cout<<"Second"<<endl;
+        else cout<<"First"<<endl;
     }
-    
     return 0;
 }

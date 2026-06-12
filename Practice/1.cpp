@@ -1,58 +1,40 @@
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 using namespace std;
-
-class UnionFind {
-    vector<int> parent;
-public:
-    UnionFind(int size) {
-      
-        parent.resize(size);
-      
-        // Initialize the parent array with each 
-        // element as its own representative
-        for (int i = 0; i < size; i++) {
-            parent[i] = i;
+const int MOD = 1e9 + 7;
+typedef long long ll;
+    int getMaxDepth(unordered_map<int,vector<int>>& adj, int u, int par){
+        int md = 0;
+        for(auto ngbr : adj[u]){
+            if(ngbr!=par){
+                md = max(md,getMaxDepth(adj,ngbr,u)+1);
+            }
         }
+        return md;
     }
-
-    // Find the representative (root) of the
-    // set that includes element i
-    int find(int i) {
-      
-        // If i itself is root or representative
-        if (parent[i] == i) {
-            return i;
+    ll findpow(int a, int b){
+        ll ans = 1;
+        while (b>0)
+        {
+            if(b&1){
+                ans *= a;
+            }
+            a*=a;
+            b>>=1;
         }
-      
-        // Else recursively find the representative 
-        // of the parent
-        return find(parent[i]);
+        return ans;
     }
-
-    // Unite (merge) the set that includes element 
-    // i and the set that includes element j
-    void unite(int i, int j) {
-      
-        // Representative of set containing i
-        int irep = find(i);
-      
-        // Representative of set containing j
-        int jrep = find(j);
-       
-        // Make the representative of i's set
-        // be the representative of j's set
-        parent[irep] = jrep;
+    int assignEdgeWeights(vector<vector<int>>& edges) {
+        unordered_map<int,vector<int>>adj;
+        for(auto& e : edges){
+            int u = e[0];
+            int v = e[1];
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+        int maxDepth = getMaxDepth(adj,1,-1);
+        return findpow(2,maxDepth - 1)%MOD;
     }
-};
-
-int main() {
-    int size = 5;
-    UnionFind uf(size);
-    uf.unite(1, 2);
-    uf.unite(3, 4);
-    bool inSameSet = (uf.find(1) == uf.find(2));
-    cout << "Are 1 and 2 in the same set? " 
-         << (inSameSet ? "Yes" : "No") << endl;
+int main()
+{
     return 0;
 }

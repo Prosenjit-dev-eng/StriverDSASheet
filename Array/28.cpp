@@ -14,7 +14,7 @@ int longestConsecutiveArray(vector<int> &v, int n){
     }
 
     for(auto itr : s){
-        if(s.find(itr - 1) == s.end()){
+        if(s.find(itr - 1) == s.end()){// to check the starting point
             int cnt = 1;
             int x  = itr;
             while(s.find(x+1) != s.end()){
