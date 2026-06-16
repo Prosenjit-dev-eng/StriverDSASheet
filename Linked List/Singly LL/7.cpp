@@ -30,6 +30,7 @@ void display(Node* head) {
     }
     cout << "NULL" << endl;
 }
+
 Node* reverseLL(Node* &head){
     Node* currptr = head;
     Node* prev = NULL;

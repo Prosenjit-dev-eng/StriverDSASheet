@@ -6,7 +6,7 @@ int maxAssignCookies(vector<int>g,vector<int>s){
     int n = g.size(), m = s.size();
     int l = 0, r = 0,cnt = 0;
     // l is traversing over the s
-    while (l<m)
+    while (l<m  && r < n)
     {
         if(s[l]>=g[r]){
             cnt++;

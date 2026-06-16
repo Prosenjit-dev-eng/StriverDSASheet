@@ -10,7 +10,7 @@ using namespace std;
         for(int i = 0; i < n;i++){
             // Duplicacy for fixed n1
             if(i > 0 && nums[i] == nums[i-1]) continue;
-            int n1 = nums[i];
+            int n1 = nums[i]; 
             int target = -n1;
             int j = i+1, k = n - 1;
             while(j < k){
@@ -33,7 +33,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int>nums = {-1,0,1,2,-1,-4};
+    vector<int>nums = {-1,0,1,2,-1,4};
     vector<vector<int>>ans = threeSum(nums);
     for(auto v: ans){
         for(auto x: v){

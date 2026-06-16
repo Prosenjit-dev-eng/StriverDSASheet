@@ -10,7 +10,7 @@ struct Data{
 bool comp(Data val1, Data val2){
     return val1.e<val2.e;
 }
-void N_meetings(int start[],int end[],int n){
+void N_meetings(int start[],int end[],int n){ 
     vector<Data>arr(n);
     for (int i = 0; i < n; i++)
     {
@@ -20,7 +20,6 @@ void N_meetings(int start[],int end[],int n){
         
     }
     sort(arr.begin(),arr.end(),comp);
-    // vector<int> position(n, arr[0].pos);  // ❌ This creates a vector of size n, all with arr[0].pos
     vector<int>position;
     position.push_back(arr[0].pos);
     int cnt = 1;// bcz of arr[0].pos
