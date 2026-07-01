@@ -1,17 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-    void backtrack(int start, vector<int>& nums, vector<int>& curr, vector<vector<int>>& res) {
-        res.push_back(curr);
-
-        for (int i = start; i < nums.size(); i++) {
-            if (i > start && nums[i] == nums[i - 1]) continue;
-
-            curr.push_back(nums[i]);
-
-            backtrack(i + 1, nums, curr, res);
-
-            curr.pop_back();
+    void backtrack(int i, vector<int>& nums, vector<int>& curr, vector<vector<int>>& res) {
+        if(i == nums.size()) {
+            res.push_back(curr);
+            return;
         }
+        curr.push_back(nums[i]);
+        // Include
+        backtrack(i+1,nums,curr,res);
+
+        curr.pop_back();
+
+        int idx = i+1;
+        while (idx < nums.size() && nums[idx] == nums[idx-1])
+        {
+            idx++;
+        }
+        // Exclude 
+        backtrack(idx,nums,curr,res);
+        
     }
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
         sort(nums.begin(), nums.end());

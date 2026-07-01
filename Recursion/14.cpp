@@ -6,7 +6,7 @@ set<vector<int>> s; // To avoid duplicates
 void getAllCombinations(vector<int>& arr, int idx, int target, vector<vector<int>>& ans, vector<int>& combin) {
     int n = arr.size();
     if (target == 0) {
-        if (s.find(combin) == s.end()) {
+        if (s.find(combin) == s.end()) {// it is not in the set
             ans.push_back(combin);
             s.insert(combin);
         }

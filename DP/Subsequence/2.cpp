@@ -23,7 +23,7 @@ int coinChange(vector<int>& coins, int amount) {
     int ans =  f(n - 1, amount,coins);
     return ans >= 1e9 ? -1 : ans;
 }*/
-int f(int idx, int amount, vector<int>& coins, vector<vector<int>>&dp){
+/*int f(int idx, int amount, vector<int>& coins, vector<vector<int>>&dp){
     if (idx == 0)
     {
         if (amount % coins[0] == 0)
@@ -47,6 +47,33 @@ int coinChange(vector<int>& coins, int amount) {
     vector<vector<int>>dp(n+1,vector<int>(amount+1,-1));// idx and amount changes, so 2d dp
     int ans =  f(n - 1, amount,coins,dp);
     return ans >= 1e9 ? -1 : ans;
+}*/
+
+int coinChange(vector<int>& coins, int amount) {
+    int n = coins.size();
+    vector<vector<int>>dp(n,vector<int>(amount+1,-1));// idx and amount changes, so 2d dp
+    for (int i = 0; i <= amount; i++)
+    {
+        if(i%coins[0] == 0) dp[0][i] = i/coins[0];
+        else dp[0][i] = 1e9; 
+    }
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 0; j <= amount; j++)
+        {
+            int notPick = dp[i-1][j];
+            int pick = INT_MAX;// return minimum so INT_MAX
+            if (coins[i] <= j)
+            {
+                pick = 1+dp[i][j - coins[i]];
+            }
+            dp[i][j] = min(pick,notPick);
+        }
+        
+    }
+    int ans = dp[n-1][amount];
+    return ans >= 1e9 ? -1 : ans;
+    
 }
 int main()
 {

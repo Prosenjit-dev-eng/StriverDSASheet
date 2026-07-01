@@ -14,7 +14,7 @@ void ratInMaze(int i, int j, vector<vector<int>>& maze, string &path, int n) {
         return;
     }
 
-    maze[i][j] = 0; // To mark the cell, where I don't want to go
+    maze[i][j] = 0; // To mark the cell, where I don't want to go-> Do 
 
     // Left
     path.push_back('L');
@@ -36,7 +36,7 @@ void ratInMaze(int i, int j, vector<vector<int>>& maze, string &path, int n) {
     ratInMaze(i - 1, j, maze, path, n);
     path.pop_back();
 
-    maze[i][j] = 1; // bcz we want to check the other paths also
+    maze[i][j] = 1; // bcz we want to check the other paths also-> undo
 }
 
 vector<string> findPath(vector<vector<int>>& maze, int n) {

@@ -12,7 +12,7 @@ void printF(int idx, vector<int>&ds,int arr[], int n){
         cout<<endl;
         return;
     }
-    // PIck
+    // Pick
         ds.push_back(arr[idx]);
         printF(idx+1,ds,arr,n);
     // Not pick

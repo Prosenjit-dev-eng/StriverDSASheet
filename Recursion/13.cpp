@@ -22,7 +22,7 @@ void printCombinationSum(int idx, vector<int>&ds,int arr[], int n, int s, int su
         ds.pop_back();
     }
     // Not pick
-        printCombinationSum(idx+1,ds,arr,n,s,sum);
+    printCombinationSum(idx+1,ds,arr,n,s,sum);
 
 }
 int main()

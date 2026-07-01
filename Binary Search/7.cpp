@@ -19,7 +19,7 @@ int findEleInRotatedSortedArray(vector<int>& v, int n, int x){
             if(v[mid]<=x && v[high]>=x) low = mid + 1;
             else high = mid - 1;
         }
-    }
+    } 
     return -1;
 }
 int main()
