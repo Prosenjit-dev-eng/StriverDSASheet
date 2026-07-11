@@ -34,11 +34,14 @@ void addRightBoundary(TreeNode* root, vector<int> &res){
         if (!isLeaf(curr)) st.push(curr->val);
         curr = curr->right ? curr->right : curr->left;
     }
-    // Add right boundary in reverse order
+    // Add right boundary in reverse order, so we use stack for which the reverse order should be maintained
     while (!st.empty()) {
         res.push_back(st.top());
         st.pop();
     }
+    // Why we use stack here
+    // Suppose res = [1,2,3]
+    // Now we add 4, so after reversing it becomes => [4,3,2,1], we don't need it
 }
 int main()
 {

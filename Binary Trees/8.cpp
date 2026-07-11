@@ -10,29 +10,26 @@ struct TreeNode {
 };
 
 vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-    vector<vector<int>> ans;
-    if (!root) return ans;
-
-        queue<TreeNode*> q;
+        if(!root) return {};
+        vector<vector<int>>res;
+        queue<TreeNode*>q;
         q.push(root);
-        bool flag = true;// true = left to right, false = right to left
+        bool flag = true;// if it is true->same order array otherwise reverse
         while(!q.empty()){
-            int size = q.size();   // number of nodes in this level
-            vector<int> row(size);     // collect this level’s nodes
-
-            for (int i = 0; i < size; i++) {
-                TreeNode* curr = q.front(); q.pop();
-
-                int idx = (flag)? i :  (size - i - 1);//(size - i - 1) means from back side
-                row[idx] = curr->val;
-                if (curr->left) q.push(curr->left);
-                if (curr->right) q.push(curr->right);
+            int n = q.size();
+            vector<int>arr;
+            while(n--){
+                TreeNode* node = q.front();
+                q.pop();
+                arr.push_back(node->val);
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
             }
-            // After this level
-            flag = !flag;// VVI
-            ans.push_back(row);  // add completed level
+            if(!flag) reverse(arr.begin(),arr.end());
+            res.push_back(arr);
+            flag = !flag;// process after every level
         }
-        return ans;
+        return res;
     }
 int main()
 {

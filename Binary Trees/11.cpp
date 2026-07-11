@@ -11,7 +11,7 @@ struct TreeNode {
 vector<int>topview(TreeNode* root){
     vector<int>ans;
     if(!root) return ans;
-    map<int,int>mp; // line & node value
+    map<int,int>mp; // line -> node value
     queue<pair<TreeNode*,int>>q; // node, line
     q.push({root,0});
     while(!q.empty()){

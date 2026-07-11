@@ -21,7 +21,7 @@ bool isCycle(int V, vector<vector<int>>& edges) {
     } 
     for (int i = 0; i < V; i++)
     {
-        if(!vis[i] && dfs(i,vis,adj,inrecursion)){
+        if(!vis[i] && dfs(i,vis,adj,inrecursion)){// We form dfs from every node bcz of disconnected graph
             return true;
         }
     }

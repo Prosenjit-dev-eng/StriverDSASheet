@@ -5,7 +5,6 @@ void dfs(int node, vector<int>adj[], vector<int>&vis, stack<int>&st){
     for(auto &it : adj[node]){
         if(!vis[it]){
             dfs(it,adj,vis,st);
-
         }
         
     }
@@ -27,8 +26,6 @@ vector<int> topoSort(int V, vector<int> adj[]){
 
         }
         return ans;
-        
-    
 }
 int main()
 {

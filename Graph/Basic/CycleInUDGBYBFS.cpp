@@ -33,7 +33,7 @@ bool isCycle(int V, vector<vector<int>>& edges) {
     } 
     for (int i = 0; i < V; i++)
     {
-        if(!vis[i] && bfs(i,vis,adj)){
+        if(!vis[i] && bfs(i,vis,adj)){ 
             return true;
         }
         return false;
