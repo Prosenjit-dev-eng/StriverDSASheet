@@ -13,7 +13,7 @@ TreeNode* searchBST(TreeNode* root, int val) {
             root = val < root->val ? root->left : root->right;
         }
         return root;
-    }
+}
 int main()
 {
     TreeNode* root = new TreeNode(4);
