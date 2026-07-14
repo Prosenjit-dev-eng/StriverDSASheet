@@ -7,16 +7,20 @@ struct TreeNode {
     TreeNode() : val(0), left(nullptr), right(nullptr) {}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-}; 
-TreeNode* nextRight = NULL;
-void flatten(TreeNode* root){
-    if(!root) return;
-    flatten(root->right);
-    flatten(root->left);
-    root->left = NULL;
-    root->right = nextRight;
-    nextRight = root;
-}
+};
+class Codec {
+public:
+
+    // Encodes a tree to a single string.
+    string serialize(TreeNode* root) {
+        
+    }
+
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data) {
+        
+    }
+};
 int main()
 {
     return 0;

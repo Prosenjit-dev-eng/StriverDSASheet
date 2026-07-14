@@ -1,10 +1,10 @@
-#include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 using namespace std;
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
         int n = image.size();
         int m = image[0].size();
         int startingColor = image[sr][sc];
-        if(startingColor == color) return image;
+        if(startingColor == color) return image;// same color, of the grid
         queue<pair<int,int>>q;
         q.push({sr,sc});
         image[sr][sc] = color;

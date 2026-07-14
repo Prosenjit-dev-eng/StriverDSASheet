@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 using namespace std;
 class MedianFinder {
 public:
@@ -17,7 +17,7 @@ public:
         else right.push(num);
 
         // Always maintain size of left(+1) >= right
-        if (abs((int)left.size() - (int)right.size()) > + 1)
+        if (abs((int)left.size() - (int)right.size()) > 1)
         {
             right.push(left.top());
             left.pop();
