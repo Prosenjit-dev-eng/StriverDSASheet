@@ -38,16 +38,16 @@ int matrixMaultipication(vector<int>& arr, int n){
 int matrixMaultipication(vector<int> &arr, int n)
 {
 
-    vector<vector<int>> dp(n, vector<int>(n, 0));
+    vector<vector<int>> dp(n, vector<int>(n, 0));// coz no of matrices get highest no of matrices = n-1
     // for (int i = 0; i < n; i++)
     // {
     //     dp[i][i] = 0;
     // }
 
     // if(dp[i][j] != -1) return dp[i][j];
-    for (int i = n - 1; i >= 1; i--)
+    for (int i = n - 1; i >= 1; i--)// i=1
     {
-        for (int j = i + 1; j < n; j++)
+        for (int j = i + 1; j < n; j++)// j als i+1
         {
 
             int mini = INT_MAX;
