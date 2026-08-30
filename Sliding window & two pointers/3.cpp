@@ -7,8 +7,8 @@ int len(vector<int>a,int k){
     {
         if(a[r]==0) zeroes++;
         if(zeroes>k){
-        if(a[l]==0) zeroes--;
-            l++;
+            if(a[l]==0) zeroes--;// We can use here while but tc will be o(2n) so we can use if
+                l++;
         }
         if (zeroes<=k)
         {

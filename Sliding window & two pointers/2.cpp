@@ -3,7 +3,7 @@ using namespace std;
 int len(string s){
     int l = 0, r = 0;
     int n = s.size();
-    vector<int>hash(256,-1);
+    vector<int>hash(256,-1);// Character -> Last index mapping
     int maxlen = 0;
     while (r<n)
     {

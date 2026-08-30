@@ -6,8 +6,8 @@ bool dfs(int u, int parent, vector<bool>&vis, vector<vector<int>>& adj){
         if(v == parent) continue; // Skip the parent node
         if(vis[v]) return true; // If we encounter a visited node, there's a cycle
         if(dfs(v, u, vis, adj)) return true; // Recur for the next node
-    }
-    return false;
+   }
+    return false; 
 }
 bool isCycle(int V, vector<vector<int>>& edges) {
     vector<bool>vis(V, false);
@@ -21,8 +21,8 @@ bool isCycle(int V, vector<vector<int>>& edges) {
         if(!vis[i] && dfs(i,-1,vis,adj)){
             return true;
         }
-        return false;
     }
+    return false;
     
 }
 int main()
