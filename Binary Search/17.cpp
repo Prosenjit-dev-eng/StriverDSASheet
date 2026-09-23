@@ -24,9 +24,9 @@ int missingK(vector<int>&v,int n, int k){
     }
       return low + k;
 }
-int main()
+int main() 
 {
-        int n;
+    int n;
     cin>>n;
     vector<int>v(n);
     for (int i = 0; i < n; i++)
