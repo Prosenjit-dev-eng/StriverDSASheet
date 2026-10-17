@@ -1,0 +1,1 @@
+{"name":"Local: 1389A","url":"c:\\Users\\hawla\\Desktop\\Striver dsa sheet\\Codeforce\\Math\\1389A.cpp","tests":[{"id":1792036351627,"input":"4\n1 1337\n13 69\n2 4\n88 89\n","output":"6 7\n14 21\n2 4\n-1 -1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\hawla\\Desktop\\Striver dsa sheet\\Codeforce\\Math\\1389A.cpp","group":"local","local":true}
